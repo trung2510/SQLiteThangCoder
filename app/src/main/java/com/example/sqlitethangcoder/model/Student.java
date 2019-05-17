@@ -15,6 +15,7 @@ public class Student {
         this.mEmail = mEmail;
     }
 
+
     public Student(String mName, String mNumber, String mAddress, String mEmail) {
         this.mName = mName;
         this.mNumber = mNumber;
@@ -60,5 +61,16 @@ public class Student {
 
     public void setmEmail(String mEmail) {
         this.mEmail = mEmail;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "mId='" + mId + '\'' +
+                ", mName='" + mName + '\'' +
+                ", mNumber='" + mNumber + '\'' +
+                ", mAddress='" + mAddress + '\'' +
+                ", mEmail='" + mEmail + '\'' +
+                '}';
     }
 }

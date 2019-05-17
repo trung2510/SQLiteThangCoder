@@ -2,6 +2,7 @@ package com.example.sqlitethangcoder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,19 +29,23 @@ public class MainActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Student student = createStudent();
-                if(student != null){
-                    dbManager.addStudent(student);
-                }
+//                Student student = createStudent();
+//                if(student != null){
+//                    Log.e("I", dbManager.addStudent(student)+"");
+//                }else {
+//                    Log.e("I", "NULL");
+//                }
+
+                Log.e("I", dbManager.addStudent(new Student("123","123","32","3123","ewqew"))+"");
             }
         });
     }
 
     private Student createStudent() {
         String name = edtName.getText().toString();
-        String phone = edtName.getText().toString();
-        String address = edtName.getText().toString();
-        String email = edtName.getText().toString();
+        String phone = edtNumber.getText().toString();
+        String address = edtAddress.getText().toString();
+        String email = edtEmail.getText().toString();
         Student student = new Student(name,phone,address,email);
         return student;
     }
